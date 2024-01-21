@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #cfffd0, #3fff46);
+}
+
+.square {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    animation: container 8s linear infinite ;
+    border: 40px dashed rgba(0,0,0, .2);
+    box-shadow: 0 0 0 40px rgba(0, 0, 0, .5), inset 0 0 0 40px rgba(0, 0, 0, .4);
+}
+
+@keyframes container {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.square span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.square span::before {
+    content: "";
+    display: block;
+    border-top: 40px solid #fff;
+    animation: inAndOut 4s linear infinite;
+}
+
+@keyframes inAndOut {
+    0% {
+        transform: translateX(-100%);
+    }
+    50%, 100% {
+        transform: translateX(100%);
+    }
+}
+
+.square span:nth-child(1) {
+    transform: rotate(0);
+}
+
+.square span:nth-child(2) {
+    transform: rotate(90deg);
+}
+
+.square span:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+.square span:nth-child(4) {
+    transform: rotate(270deg);
+}
+
+.square span:nth-child(1)::before {
+    animation-delay: -3s;
+}
+
+.square span:nth-child(2)::before {
+    animation-delay: -2s;
+}   
+
+.square span:nth-child(3)::before {
+    animation-delay: -1s;
+}

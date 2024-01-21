@@ -1,0 +1,59 @@
+svg {
+    width: 0;
+    height: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0c1b21;
+}
+
+.load {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    animation: circularMotion 10s linear infinite;
+    filter: url("#gooey");
+}
+
+.load span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(45deg * var(--i)));
+}
+
+.load span::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #c7eeff, #03a9f4);
+    box-shadow: 0 0 30px #00bcd4,
+    0 0 15px #00bcd4;
+}
+
+.load .rorate {
+    animation:circularMotion 2s ease-in-out infinite;
+    animation-delay: calc(var(--j)* .1s);
+    
+}
+
+@keyframes circularMotion {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

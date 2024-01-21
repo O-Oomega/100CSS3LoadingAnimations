@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+svg {
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    fill:none;
+}
+
+svg:nth-child(2) {
+    filter:blur(40px);
+}
+
+svg path {
+    d: path("M0,50 C300,220 300,-120 600,50");
+    /* stroke:#ff0092; */
+    stroke-width: 50;
+    stroke-linecap: round;
+    transform: translate(50px, 50%);
+    animation: creep 1s ease-in-out infinite;
+}
+
+@keyframes creep {
+    0%, 100% {
+        stroke:#ff0092;
+        d: path("M0,50 C300,220 300,-120 600,50");
+    }
+
+    50% {
+        stroke:#00ff00;
+        d: path("M0,50 C320,-100 280,220 600,50");
+    }
+}

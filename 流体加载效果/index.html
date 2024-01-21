@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <svg>
+        <filter id="gooey">
+            <!-- 模糊 -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+            <!-- 阴影     -->
+            <feColorMatrix values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 20 -10
+            "></feColorMatrix>
+        </filter>
+    </svg>
+    <div class="load">
+        <span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span>
+        <span style="--j:1" class="rorate"></span><span style="--j:2" class="rorate"></span><span style="--j:3" class="rorate"></span><span style="--j:4" class="rorate"></span><span style="--j:5" class="rorate"></span>
+    </div>
+</body>
+</html>
